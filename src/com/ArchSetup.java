@@ -1,5 +1,7 @@
 package com;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.logging.Logger;
 
 public class ArchSetup {
@@ -36,6 +38,9 @@ public class ArchSetup {
     //Main Memory
     int memory[][] = new int[2048][16];
 
+    //Cache
+    LinkedHashMap<String, String> cache = new LinkedHashMap<String, String>();
+
     //Contents of the instruction after decoding
     String opcode;
     String R;
@@ -59,7 +64,7 @@ public class ArchSetup {
 
     /**
      * Main method
-     * */
+     */
     public static void main(String[] args) {
         Logger.getLogger("In main()");
 
@@ -70,7 +75,7 @@ public class ArchSetup {
      * Init method that initializes registers.
      * Reads JSON file that contains instructions and dummy value and stores them to memory
      * Sets initial value in Program Counter (PC)
-     * */
+     */
     void init() {
         x1 = new Register(def16bitVal, 16);
         x2 = new Register(def16bitVal, 16);
@@ -104,7 +109,8 @@ public class ArchSetup {
     }
 
 
-    /** Decodes instructions and seperates them into
+    /**
+     * Decodes instructions and seperates them into
      * opcode
      * R
      * IX
@@ -127,12 +133,10 @@ public class ArchSetup {
     }
 
     /**
-     *
      * Loads the instruction from the memory
+     *
      * @param address of the instruction is the address from which the instruction is to be fetched
      * @return is the value at the given address
-     *
-     *
      */
 
     String loadFromMemeory(String address) {
@@ -148,10 +152,9 @@ public class ArchSetup {
     }
 
     /**
-     *
      * Stores the instruction into the memory
-     * @param address,value  specifies the addres and the instruction to be stored in the memory
      *
+     * @param address,value specifies the addres and the instruction to be stored in the memory
      */
     void storeToMemory(String address, String value) {
 
@@ -167,8 +170,24 @@ public class ArchSetup {
             value = value.substring(1, value.length());
 
         }
+    }
 
-
+    String loadFromCache(String key) {
+        String value = "";
+        if (cache.containsKey(key)) {
+                value = cache.get(key);
+        } else {
+            //key does not exists
+            if (cache.size()>16) {
+                String temp = cache.entrySet().iterator().next().getKey();
+                cache.remove(temp);
+            }
+            for (int i = 0; i < 16; i++) {
+                value = value + memory[Integer.valueOf(key)][i];
+            }
+            cache.put(key,value);
+        }
+        return value;
     }
 
     /**
