@@ -172,6 +172,13 @@ public class ArchSetup {
         }
     }
 
+    /**
+     * Loads the instruction from the cache
+     *
+     * @param key of the instruction is the address from which the instruction is to be fetched from the memory
+     * @return is the value at the given key in the cache
+     */
+
     String loadFromCache(String key) {
         String value = "";
         if (cache.containsKey(key)) {
