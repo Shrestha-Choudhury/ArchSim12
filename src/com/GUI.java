@@ -1115,10 +1115,6 @@ public class GUI{
 		label_5.setText("Memory Data");
 		label_5.setBounds(16, 129, 100, 15);
 
-		setBtn = new Button(group_2, SWT.NONE);
-		setBtn.setText("Set");
-		setBtn.setBounds(214, 164, 75, 25);
-
 		currAddressRadioBtn1 = new Button( group_2,SWT.RADIO);
 		currAddressRadioBtn1.setBounds(122, 46, 13, 16);
 		currAddressRadioBtn1.setEnabled(false);
@@ -1179,7 +1175,7 @@ public class GUI{
 
 		haltBtn = new Button(group_4, SWT.NONE);
 		haltBtn.setText("Halt");
-		haltBtn.setBounds(82, 106, 75, 25);
+		haltBtn.setBounds(10, 106, 75, 25);
 
 		Label label_9 = new Label(group_4, SWT.NONE);
 		label_9.setText("Status");
@@ -1187,7 +1183,7 @@ public class GUI{
 
 		clearBtn = new Button(group_4, SWT.NONE);
 		clearBtn.setText("Clear");
-		clearBtn.setBounds(224, 106, 75, 25);
+		clearBtn.setBounds(148, 106, 75, 25);
 
 		statusTxtBox = new Text(group_4, SWT.BORDER);
 		statusTxtBox.setBounds(452, 66, 463, 66);
@@ -1196,6 +1192,15 @@ public class GUI{
 		label_10.setText("Execution");
 		//label_10.setFont(SWTResourceManager.getFont("Times New Roman", 12, SWT.BOLD));
 		label_10.setBounds(10, 10, 85, 28);
+		
+				setBtn = new Button(group_4, SWT.NONE);
+				setBtn.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+					}
+				});
+				setBtn.setBounds(288, 106, 75, 25);
+				setBtn.setText("Set");
 
 		Group group_5 = new Group(shell, SWT.NONE);
 		group_5.setBounds(962, 70, 398, 595);

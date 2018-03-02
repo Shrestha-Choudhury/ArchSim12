@@ -104,6 +104,13 @@ public class ArchSetup {
             storeToMemory(Integer.toBinaryString(i), jsonFile.instructions[i - 6]);
         }
 
+        for (int i = 6; i < 6 + jsonFile.instructions.length; i++) {
+
+            String value = loadFromCache(String.valueOf(i));
+            System.out.println("Cache----->"+i+"---"+value);
+            //storeToCache(Integer.toBinaryString(i),value);
+        }
+
         PC.setValue(String.valueOf(6));
 
     }
@@ -175,27 +182,49 @@ public class ArchSetup {
     /**
      * Loads the instruction from the cache
      *
-     * @param key of the instruction is the address from which the instruction is to be fetched from the memory
+     * @param key of the instruction is the address from which the instruction is to be fetched from the cache
      * @return is the value at the given key in the cache
      */
 
     String loadFromCache(String key) {
+        long startTime = System.nanoTime();
         String value = "";
         if (cache.containsKey(key)) {
                 value = cache.get(key);
         } else {
             //key does not exists
-            if (cache.size()>16) {
+            if (cache.size()==16) {
                 String temp = cache.entrySet().iterator().next().getKey();
                 cache.remove(temp);
             }
-            for (int i = 0; i < 16; i++) {
-                value = value + memory[Integer.valueOf(key)][i];
-            }
+            value = loadFromMemeory(key);
             cache.put(key,value);
+            //System.out.println("Size of cache----->"+cache.size());
         }
+        long endTime = System.nanoTime();
+        System.out.println("Time taken to load from Cache: "+(endTime - startTime) + " ns");
         return value;
     }
+
+    /**
+     * Stores the instruction into the cache
+     *
+     * @param key,value specifies the address and the instruction to be stored in the cache
+     */
+    void storeToCache(String key, String value) {
+
+        long startTime = System.nanoTime();
+        if (cache.size()==16) {
+            String temp = cache.entrySet().iterator().next().getKey();
+            cache.remove(temp);
+        }
+
+        cache.put(key,value);
+        long endTime = System.nanoTime();
+        System.out.println("Time taken to store to Cache: "+(endTime - startTime) + " ns");
+        //System.out.println("Size of cache in store----->"+cache.size());
+    }
+
 
     /**
      *
@@ -234,11 +263,11 @@ public class ArchSetup {
 
             switch (IX) {
                 case "01": 			// both indirect addressing and indexing
-                    EA = loadFromMemeory(String.format("%12s", Integer.toBinaryString(Integer.parseInt(x1.getValue(), 2)
+                    EA = loadFromCache(String.format("%12s", Integer.toBinaryString(Integer.parseInt(x1.getValue(), 2)
                             + Integer.parseInt(Address, 2))).replace(' ', '0'));
                     break;
                 case "10": 			// both indirect addressing and indexing
-                    EA = loadFromMemeory(String.format("%12s", Integer.toBinaryString(Integer.parseInt(x2.getValue(), 2)
+                    EA = loadFromCache(String.format("%12s", Integer.toBinaryString(Integer.parseInt(x2.getValue(), 2)
                             + Integer.parseInt(Address, 2))).replace(' ', '0'));
                     break;
                 case "11": 			// both indirect addressing and indexing
@@ -247,7 +276,7 @@ public class ArchSetup {
 
                     break;
                 default:  			// indirect addressing, but NO indexing
-                    EA = loadFromMemeory(String.format("%12s", Integer.toBinaryString(Integer.parseInt(x3.getValue(), 2)
+                    EA = loadFromCache(String.format("%12s", Integer.toBinaryString(Integer.parseInt(x3.getValue(), 2)
                             + Integer.parseInt(Address, 2))).replace(' ', '0'));
                     EA = Address;
 
@@ -317,7 +346,7 @@ public class ArchSetup {
 
             case 2: //MBR set
 
-                value = loadFromMemeory(MAR.getValue());
+                value = loadFromCache(MAR.getValue());
                 gui.statusTxtBox.setText("Instruction fetched from memory using address in MAR. MBR value set");
                 MBR.setValue(value);
                 gui.mbrTxtBox.setText(MBR.getValue());
@@ -424,7 +453,7 @@ public class ArchSetup {
                         gui.mbrTxtBox.setText(MBR.getValue());
                     }
                 } else {
-                    MBR.setValue(loadFromMemeory(MAR.getValue()));
+                    MBR.setValue(loadFromCache(MAR.getValue()));
                     gui.mbrTxtBox.setText(MBR.getValue());
                     gui.statusTxtBox.setText("MBR set from MAR");
                 }
@@ -453,7 +482,7 @@ public class ArchSetup {
 
                         if (R.equals("00")) {
                         	gui.r0ChkBox.setSelection(true);
-                            R0.setValue(loadFromMemeory(IAR.getValue()));
+                            R0.setValue(loadFromCache(IAR.getValue()));
                             gui.r0TxtBox.setText(R0.getValue());
 
                             // setting radio button/lights
@@ -463,7 +492,7 @@ public class ArchSetup {
                                     gui.r0RadioBtn13, gui.r0RadioBtn14, gui.r0RadioBtn15, gui.r0RadioBtn16);
                         } else if (R.equals("01")) {
                         	gui.r1ChkBox.setSelection(true);
-                            R1.setValue(loadFromMemeory(IAR.getValue()));
+                            R1.setValue(loadFromCache(IAR.getValue()));
                             gui.r1TxtBox.setText(R1.getValue());
 
                             // setting radio button/lights
@@ -474,7 +503,7 @@ public class ArchSetup {
 
                         } else if (R.equals("10")) {
                         	gui.r2ChkBox.setSelection(true);
-                            R2.setValue(loadFromMemeory(IAR.getValue()));
+                            R2.setValue(loadFromCache(IAR.getValue()));
                             gui.r2TxtBox.setText(R2.getValue());
 
                             // setting radio button/lights
@@ -484,7 +513,7 @@ public class ArchSetup {
                                     gui.r2RadioBtn13, gui.r2RadioBtn14, gui.r2RadioBtn15, gui.r2RadioBtn16);
                         } else {
                         	gui.r3ChkBox.setSelection(true);
-                            R3.setValue(loadFromMemeory(IAR.getValue()));
+                            R3.setValue(loadFromCache(IAR.getValue()));
                             gui.r3TxtBox.setText(R3.getValue());
 
                             // setting radio button/lights
@@ -610,7 +639,7 @@ public class ArchSetup {
                         
                         if (IX.equals("01")) {
                         	gui.x1ChkBox.setSelection(true);
-                            x1.setValue(loadFromMemeory(IAR.getValue()));
+                            x1.setValue(loadFromCache(IAR.getValue()));
                             gui.x1TxtBox.setText(x1.getValue());
                             gui.setRadioBtn16(x1.getValue(), gui.x1RadioBtn1, gui.x1RadioBtn2, gui.x1RadioBtn3,
                                     gui.x1RadioBtn4, gui.x1RadioBtn5, gui.x1RadioBtn6, gui.x1RadioBtn7,
@@ -619,7 +648,7 @@ public class ArchSetup {
                                     gui.x1RadioBtn16);
                         } else if (IX.equals("10")) {
                         	gui.x2ChkBox.setSelection(true);
-                            x2.setValue(loadFromMemeory(IAR.getValue()));
+                            x2.setValue(loadFromCache(IAR.getValue()));
                             gui.x2TxtBox.setText(x2.getValue());
                             gui.setRadioBtn16(x2.getValue(), gui.x2RadioBtn1, gui.x2RadioBtn2, gui.x2RadioBtn3,
                                     gui.x2RadioBtn4, gui.x2RadioBtn5, gui.x2RadioBtn6, gui.x2RadioBtn7,
@@ -628,7 +657,7 @@ public class ArchSetup {
                                     gui.x2RadioBtn16);
                         } else {
                         	gui.x3ChkBox.setSelection(true);
-                            x3.setValue(loadFromMemeory(IAR.getValue()));
+                            x3.setValue(loadFromCache(IAR.getValue()));
                             gui.x3TxtBox.setText(x3.getValue());
                             gui.setRadioBtn16(x3.getValue(), gui.x3RadioBtn1, gui.x3RadioBtn2, gui.x3RadioBtn3,
                                     gui.x3RadioBtn4, gui.x3RadioBtn5, gui.x3RadioBtn6, gui.x3RadioBtn7,
