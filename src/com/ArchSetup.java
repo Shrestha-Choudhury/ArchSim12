@@ -104,12 +104,6 @@ public class ArchSetup {
             storeToMemory(Integer.toBinaryString(i), jsonFile.instructions[i - 6]);
         }
 
-        for (int i = 6; i < 6 + jsonFile.instructions.length; i++) {
-
-            String value = loadFromCache(String.valueOf(i));
-            System.out.println("Cache----->"+i+"---"+value);
-            //storeToCache(Integer.toBinaryString(i),value);
-        }
 
         PC.setValue(String.valueOf(6));
 
