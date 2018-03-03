@@ -296,8 +296,6 @@ public class GUI{
 	Button setBtn;
 	Button haltBtn;
 	Button clearBtn;
-	Button inputBtn;
-	Button outputBtn;
 
 	Button ccRadioBtn1;
 	Button ccRadioBtn2;
@@ -1167,7 +1165,7 @@ public class GUI{
 
 		singleStepBtn = new Button(group_4, SWT.NONE);
 		singleStepBtn.setText("Single Step");
-		singleStepBtn.setBounds(106, 44, 75, 25);
+		singleStepBtn.setBounds(152, 44, 75, 25);
 		singleStepBtn.setEnabled(false);
 
 		iplBtn = new Button(group_4, SWT.NONE);
@@ -1177,12 +1175,12 @@ public class GUI{
 			}
 		});
 		iplBtn.setText("IPL");
-		iplBtn.setBounds(199, 44, 75, 25);
+		iplBtn.setBounds(294, 44, 75, 25);
 
 
 		haltBtn = new Button(group_4, SWT.NONE);
 		haltBtn.setText("Halt");
-		haltBtn.setBounds(199, 106, 75, 25);
+		haltBtn.setBounds(152, 106, 75, 25);
 
 		Label label_9 = new Label(group_4, SWT.NONE);
 		label_9.setText("Status");
@@ -1206,21 +1204,8 @@ public class GUI{
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		setBtn.setBounds(294, 44, 75, 25);
+		setBtn.setBounds(10, 106, 75, 25);
 		setBtn.setText("Set");
-
-		inputBtn = new Button(group_4, SWT.NONE);
-		inputBtn.setBounds(10, 106, 75, 25);
-		inputBtn.setText("Input");
-
-		outputBtn = new Button(group_4, SWT.NONE);
-		outputBtn.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-			}
-		});
-		outputBtn.setText("Output");
-		outputBtn.setBounds(106, 106, 75, 25);
 
 		Group group_5 = new Group(shell, SWT.NONE);
 		group_5.setBounds(962, 70, 398, 595);
