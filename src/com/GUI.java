@@ -296,6 +296,8 @@ public class GUI{
 	Button setBtn;
 	Button haltBtn;
 	Button clearBtn;
+	Button inputBtn;
+	Button outputBtn;
 
 	Button ccRadioBtn1;
 	Button ccRadioBtn2;
@@ -331,7 +333,7 @@ public class GUI{
 	Button msrRadioBtn14;
 	Button msrRadioBtn15;
 	Button msrRadioBtn16;
-	
+
 	Listener listener;
 
 	ArchSetup archSetup;
@@ -1165,42 +1167,60 @@ public class GUI{
 
 		singleStepBtn = new Button(group_4, SWT.NONE);
 		singleStepBtn.setText("Single Step");
-		singleStepBtn.setBounds(148, 44, 75, 25);
+		singleStepBtn.setBounds(106, 44, 75, 25);
 		singleStepBtn.setEnabled(false);
 
 		iplBtn = new Button(group_4, SWT.NONE);
+		iplBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
 		iplBtn.setText("IPL");
-		iplBtn.setBounds(288, 44, 75, 25);
+		iplBtn.setBounds(199, 44, 75, 25);
 
 
 		haltBtn = new Button(group_4, SWT.NONE);
 		haltBtn.setText("Halt");
-		haltBtn.setBounds(10, 106, 75, 25);
+		haltBtn.setBounds(199, 106, 75, 25);
 
 		Label label_9 = new Label(group_4, SWT.NONE);
 		label_9.setText("Status");
-		label_9.setBounds(452, 44, 43, 15);
+		label_9.setBounds(412, 44, 43, 15);
 
 		clearBtn = new Button(group_4, SWT.NONE);
 		clearBtn.setText("Clear");
-		clearBtn.setBounds(148, 106, 75, 25);
+		clearBtn.setBounds(294, 106, 75, 25);
 
 		statusTxtBox = new Text(group_4, SWT.BORDER);
-		statusTxtBox.setBounds(452, 66, 463, 66);
+		statusTxtBox.setBounds(412, 66, 503, 66);
 
 		Label label_10 = new Label(group_4, SWT.NONE);
 		label_10.setText("Execution");
 		//label_10.setFont(SWTResourceManager.getFont("Times New Roman", 12, SWT.BOLD));
 		label_10.setBounds(10, 10, 85, 28);
-		
-				setBtn = new Button(group_4, SWT.NONE);
-				setBtn.addSelectionListener(new SelectionAdapter() {
-					@Override
-					public void widgetSelected(SelectionEvent e) {
-					}
-				});
-				setBtn.setBounds(288, 106, 75, 25);
-				setBtn.setText("Set");
+
+		setBtn = new Button(group_4, SWT.NONE);
+		setBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		setBtn.setBounds(294, 44, 75, 25);
+		setBtn.setText("Set");
+
+		inputBtn = new Button(group_4, SWT.NONE);
+		inputBtn.setBounds(10, 106, 75, 25);
+		inputBtn.setText("Input");
+
+		outputBtn = new Button(group_4, SWT.NONE);
+		outputBtn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		outputBtn.setText("Output");
+		outputBtn.setBounds(106, 106, 75, 25);
 
 		Group group_5 = new Group(shell, SWT.NONE);
 		group_5.setBounds(962, 70, 398, 595);
