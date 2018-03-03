@@ -332,10 +332,41 @@ public class GUI{
 	Button msrRadioBtn15;
 	Button msrRadioBtn16;
 
+	Button jzChkBox;
+	Button jneChkBox;
+	Button jccChkBox;
+	Button jmaChkBox;
+	Button jsrChkBox;
+	Button rfsChkBox;
+	Button sobChkBox;
+	Button jgeChkBox;
+	Button amrChkBox;
+	Button smrChkBox;
+	Button airChkBox;
+	Button sirChkBox;
+	Button mltChkBox;
+	Button dvdChkBox;
+	Button trrChkBox;
+	Button andChkBox;
+	Button orrChkBox;
+	Button notChkBox;
+	Button srcCkhBox;
+	Button rrcChkBox;
+	Button inChkBox;
+	Button outChkBox;
+	Button faddChkBox;
+	Button fsubChkBox;
+	Button vaddChkBox;
+	Button vsubChkBox;
+	Button cnvrtChkBox;
+	Button ldfrChkBox;
+	Button stfrChkBox;
+
 	Listener listener;
 
 	ArchSetup archSetup;
 	int counter = 1;
+
 
 
 	/**
@@ -1129,31 +1160,149 @@ public class GUI{
 
 		ldrChkBox = new Button(group_3, SWT.CHECK);
 		ldrChkBox.setText("LDR");
-		ldrChkBox.setBounds(69, 79, 93, 16);
+		ldrChkBox.setBounds(34, 45, 54, 16);
 
 		ldaChkBox = new Button(group_3, SWT.CHECK);
 		ldaChkBox.setText("LDA");
-		ldaChkBox.setBounds(69, 114, 93, 16);
+		ldaChkBox.setBounds(34, 67, 54, 16);
 
 		ldxChkBox = new Button(group_3, SWT.CHECK);
 		ldxChkBox.setText("LDX");
-		ldxChkBox.setBounds(69, 147, 93, 16);
+		ldxChkBox.setBounds(34, 89, 54, 16);
 
 		strChkBox = new Button(group_3, SWT.CHECK);
 		strChkBox.setText("STR");
-		strChkBox.setBounds(352, 79, 93, 16);
+		strChkBox.setBounds(34, 111, 54, 16);
 
 		stxChkBox = new Button(group_3, SWT.CHECK);
+		stxChkBox.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
 		stxChkBox.setText("STX");
-		stxChkBox.setBounds(352, 114, 93, 16);
+		stxChkBox.setBounds(34, 131, 54, 16);
 
-		Label label_7 = new Label(group_3, SWT.NONE);
-		label_7.setText("Load");
-		label_7.setBounds(78, 51, 100, 15);
+		jzChkBox = new Button(group_3, SWT.CHECK);
+		jzChkBox.setText("JZ");
+		jzChkBox.setBounds(34, 153, 54, 16);
 
-		Label label_8 = new Label(group_3, SWT.NONE);
-		label_8.setText("Store");
-		label_8.setBounds(359, 51, 100, 15);
+		jneChkBox = new Button(group_3, SWT.CHECK);
+		jneChkBox.setText("JNE");
+		jneChkBox.setBounds(111, 45, 54, 16);
+
+		jccChkBox = new Button(group_3, SWT.CHECK);
+		jccChkBox.setText("JCC");
+		jccChkBox.setBounds(111, 67, 54, 16);
+
+		jmaChkBox = new Button(group_3, SWT.CHECK);
+		jmaChkBox.setText("JMA");
+		jmaChkBox.setBounds(111, 89, 54, 16);
+
+		jsrChkBox = new Button(group_3, SWT.CHECK);
+		jsrChkBox.setText("JSR");
+		jsrChkBox.setBounds(111, 111, 54, 16);
+
+		rfsChkBox = new Button(group_3, SWT.CHECK);
+		rfsChkBox.setText("RFS");
+		rfsChkBox.setBounds(111, 131, 54, 16);
+
+		sobChkBox = new Button(group_3, SWT.CHECK);
+		sobChkBox.setText("SOB");
+		sobChkBox.setBounds(111, 153, 54, 16);
+
+		jgeChkBox = new Button(group_3, SWT.CHECK);
+		jgeChkBox.setText("JGE");
+		jgeChkBox.setBounds(189, 45, 54, 16);
+
+		amrChkBox = new Button(group_3, SWT.CHECK);
+		amrChkBox.setText("AMR");
+		amrChkBox.setBounds(189, 67, 54, 16);
+
+		smrChkBox = new Button(group_3, SWT.CHECK);
+		smrChkBox.setText("SMR");
+		smrChkBox.setBounds(189, 89, 54, 16);
+
+		airChkBox = new Button(group_3, SWT.CHECK);
+		airChkBox.setText("AIR");
+		airChkBox.setBounds(189, 111, 54, 16);
+
+		sirChkBox = new Button(group_3, SWT.CHECK);
+		sirChkBox.setText("SIR");
+		sirChkBox.setBounds(189, 131, 54, 16);
+
+		mltChkBox = new Button(group_3, SWT.CHECK);
+		mltChkBox.setText("MLT");
+		mltChkBox.setBounds(189, 153, 54, 16);
+
+		dvdChkBox = new Button(group_3, SWT.CHECK);
+		dvdChkBox.setText("DVD");
+		dvdChkBox.setBounds(264, 45, 54, 16);
+
+		trrChkBox = new Button(group_3, SWT.CHECK);
+		trrChkBox.setText("TRR");
+		trrChkBox.setBounds(264, 67, 54, 16);
+
+		andChkBox = new Button(group_3, SWT.CHECK);
+		andChkBox.setText("AND");
+		andChkBox.setBounds(264, 89, 54, 16);
+
+		orrChkBox = new Button(group_3, SWT.CHECK);
+		orrChkBox.setText("ORR");
+		orrChkBox.setBounds(264, 111, 54, 16);
+
+		notChkBox = new Button(group_3, SWT.CHECK);
+		notChkBox.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		notChkBox.setText("NOT");
+		notChkBox.setBounds(264, 131, 54, 16);
+
+		srcCkhBox = new Button(group_3, SWT.CHECK);
+		srcCkhBox.setText("SRC");
+		srcCkhBox.setBounds(264, 153, 54, 16);
+
+		rrcChkBox = new Button(group_3, SWT.CHECK);
+		rrcChkBox.setText("RRC");
+		rrcChkBox.setBounds(344, 45, 54, 16);
+
+		inChkBox = new Button(group_3, SWT.CHECK);
+		inChkBox.setText("IN");
+		inChkBox.setBounds(344, 67, 54, 16);
+
+		outChkBox = new Button(group_3, SWT.CHECK);
+		outChkBox.setText("OUT");
+		outChkBox.setBounds(344, 89, 54, 16);
+
+		faddChkBox = new Button(group_3, SWT.CHECK);
+		faddChkBox.setText("FADD");
+		faddChkBox.setBounds(344, 111, 54, 16);
+
+		fsubChkBox = new Button(group_3, SWT.CHECK);
+		fsubChkBox.setText("FSUB");
+		fsubChkBox.setBounds(344, 131, 54, 16);
+
+		vaddChkBox = new Button(group_3, SWT.CHECK);
+		vaddChkBox.setText("VADD");
+		vaddChkBox.setBounds(344, 153, 54, 16);
+
+		vsubChkBox = new Button(group_3, SWT.CHECK);
+		vsubChkBox.setText("VSUB");
+		vsubChkBox.setBounds(420, 45, 54, 16);
+
+		cnvrtChkBox = new Button(group_3, SWT.CHECK);
+		cnvrtChkBox.setText("CNVRT");
+		cnvrtChkBox.setBounds(420, 67, 54, 16);
+
+		ldfrChkBox = new Button(group_3, SWT.CHECK);
+		ldfrChkBox.setText("LDFR");
+		ldfrChkBox.setBounds(420, 89, 54, 16);
+
+		stfrChkBox = new Button(group_3, SWT.CHECK);
+		stfrChkBox.setText("STFR");
+		stfrChkBox.setBounds(420, 111, 54, 16);
 
 		Group group_4 = new Group(shell, SWT.NONE);
 		group_4.setBounds(10, 504, 946, 161);
