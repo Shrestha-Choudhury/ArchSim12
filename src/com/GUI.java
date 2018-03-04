@@ -7,6 +7,8 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 
@@ -19,10 +21,16 @@ public class GUI{
 	public Text r1TxtBox;
 	public Text r2TxtBox;
 	public Text r3TxtBox;
+
+	List<Text> gRegTextArray= new ArrayList<>();
+
 	public Text x1TxtBox;
 	public Text x2TxtBox;
 	public Text x3TxtBox;
-	public Text currentInstrTextBox;
+
+    List<Text> iRegTextArray= new ArrayList<>();
+
+    public Text currentInstrTextBox;
 	public Text memDataTextBox;
 	public Text currentAddTxtBox;
 	public Text statusTxtBox;
@@ -36,8 +44,10 @@ public class GUI{
 	public Text iarTxtBox;
 	public Text irrTxtBox;
 	public Text msrTxtBox;
+    List<Button> ccButtonArray;
 
-	Button pcRadioBtn4;
+
+    Button pcRadioBtn4;
 	Button pcRadioBtn6;
 	Button pcRadioBtn5;
 	Button pcRadioBtn11;
@@ -67,7 +77,9 @@ public class GUI{
 	Button marRadioBtn7;
 	Button marRadioBtn8;
 
-	Button mbrRadioBtn7;
+    List<Button> marButtonArr= new ArrayList<>();
+
+    Button mbrRadioBtn7;
 	Button mbrRadioBtn11;
 	Button mbrRadioBtn15;
 	Button mbrRadioBtn16;
@@ -84,8 +96,9 @@ public class GUI{
 	Button mbrRadioBtn2;
 	Button mbrRadioBtn1;
 
+    List<Button> mbrButtonArr= new ArrayList<>();
 
-	Button irRadioBtn15;
+    Button irRadioBtn15;
 	Button irRadioBtn2;
 	Button irRadioBtn5;
 	Button irRadioBtn1;
@@ -102,7 +115,9 @@ public class GUI{
 	Button irRadioBtn14;
 	Button irRadioBtn16;
 
-	Button r0RadioBtn15;
+    List<Button> irButtonArr= new ArrayList<>();
+
+    Button r0RadioBtn15;
 	Button r0RadioBtn10;
 	Button r0RadioBtn12;
 	Button r0RadioBtn8;
@@ -119,7 +134,9 @@ public class GUI{
 	Button r0RadioBtn11;
 	Button r0RadioBtn13;
 
-	Button r1RadioBtn2;
+    List<Button> r0ButtonArr= new ArrayList<>();
+
+    Button r1RadioBtn2;
 	Button r1RadioBtn1;
 	Button r1RadioBtn3;
 	Button r1RadioBtn4;
@@ -136,8 +153,9 @@ public class GUI{
 	Button r1RadioBtn14;
 	Button r1RadioBtn15;
 
+    List<Button> r1ButtonArr= new ArrayList<>();
 
-	Button r2RadioBtn2;
+    Button r2RadioBtn2;
 	Button r2RadioBtn1;
 	Button r2RadioBtn3;
 	Button r2RadioBtn10;
@@ -154,7 +172,9 @@ public class GUI{
 	Button r2RadioBtn15;
 	Button r2RadioBtn16;
 
-	Button r3RadioBtn15;
+    List<Button> r2ButtonArr= new ArrayList<>();
+
+    Button r3RadioBtn15;
 	Button r3RadioBtn12;
 	Button r3RadioBtn13;
 	Button r3RadioBtn6;
@@ -170,6 +190,8 @@ public class GUI{
 	Button r3RadioBtn2;
 	Button r3RadioBtn5;
 	Button r3RadioBtn1;
+
+    List<Button> r3ButtonArr= new ArrayList<>();
 
 	Button x1RadioBtn2;
 	Button x1RadioBtn1;
@@ -190,7 +212,9 @@ public class GUI{
 	Button x1RadioBtn16;
 	Button x3RadioBtn16;
 
-	Button x2RadioBtn14;
+    List<Button> x1ButtonArr= new ArrayList<>();
+
+    Button x2RadioBtn14;
 	Button x2RadioBtn6;
 	Button x2RadioBtn13;
 	Button x2RadioBtn15;
@@ -206,8 +230,9 @@ public class GUI{
 	Button x2RadioBtn2;
 	Button x2RadioBtn1;
 
+    List<Button> x2ButtonArr= new ArrayList<>();
 
-	Button x3RadioBtn2;
+    Button x3RadioBtn2;
 	Button x3RadioBtn1;
 	Button x3RadioBtn3;
 	Button x3RadioBtn4;
@@ -223,7 +248,9 @@ public class GUI{
 	Button x3RadioBtn14;
 	Button x3RadioBtn15;
 
-	Button mfrRadioBtn2;
+    List<Button> x3ButtonArr= new ArrayList<>();
+
+    Button mfrRadioBtn2;
 	Button mfrRadioBtn3;
 	Button mfrRadioBtn1;
 	Button mfrRadioBtn4;
@@ -232,6 +259,7 @@ public class GUI{
 
 
 	Button currAddressRadioBtn2;
+
 	Button currAddressRadioBtn1;
 	Button currAddressRadioBtn3;
 	Button currAddressRadioBtn4;
@@ -284,89 +312,35 @@ public class GUI{
 	Button stxChkBox;
 	Button singleStepBtn;
 	Button standardBtn;
+
 	Button r0ChkBox;
 	Button r1ChkBox;
 	Button r2ChkBox;
 	Button r3ChkBox;
 
+    List<Button> rChkArr= new ArrayList<>();
+
+    Button fetchBtn;
+
 	Button x1ChkBox;
 	Button x2ChkBox;
 	Button x3ChkBox;
 
-	Button setBtn;
-	Button haltBtn;
-	Button clearBtn;
+    List<Button> xChkArr= new ArrayList<>();
 
-	Button ccRadioBtn1;
-	Button ccRadioBtn2;
-	Button ccRadioBtn3;
-	Button ccRadioBtn4;
 
-	Button raRadioBtn1;
-	Button raRadioBtn2;
-	Button raRadioBtn3;
-	Button raRadioBtn4;
-	Button raRadioBtn5;
-	Button raRadioBtn6;
-	Button raRadioBtn7;
-	Button raRadioBtn8;
-	Button raRadioBtn9;
-	Button raRadioBtn10;
-	Button raRadioBtn11;
-	Button raRadioBtn12;
-
-	Button msrRadioBtn1;
-	Button msrRadioBtn2;
-	Button msrRadioBtn3;
-	Button msrRadioBtn4;
-	Button msrRadioBtn5;
-	Button msrRadioBtn6;
-	Button msrRadioBtn7;
-	Button msrRadioBtn8;
-	Button msrRadioBtn9;
-	Button msrRadioBtn10;
-	Button msrRadioBtn11;
-	Button msrRadioBtn12;
-	Button msrRadioBtn13;
-	Button msrRadioBtn14;
-	Button msrRadioBtn15;
-	Button msrRadioBtn16;
-
-	Button jzChkBox;
-	Button jneChkBox;
-	Button jccChkBox;
-	Button jmaChkBox;
-	Button jsrChkBox;
-	Button rfsChkBox;
-	Button sobChkBox;
-	Button jgeChkBox;
-	Button amrChkBox;
-	Button smrChkBox;
-	Button airChkBox;
-	Button sirChkBox;
-	Button mltChkBox;
-	Button dvdChkBox;
-	Button trrChkBox;
-	Button andChkBox;
-	Button orrChkBox;
-	Button notChkBox;
-	Button srcCkhBox;
-	Button rrcChkBox;
-	Button inChkBox;
-	Button outChkBox;
-	Button faddChkBox;
-	Button fsubChkBox;
-	Button vaddChkBox;
-	Button vsubChkBox;
-	Button cnvrtChkBox;
-	Button ldfrChkBox;
-	Button stfrChkBox;
-
-	Listener listener;
+    Listener listener;
 
 	ArchSetup archSetup;
-	int counter = 1;
+    ArrayList<Button> pcRadioButtonArray;
 
+    String[] mainNumber = new String[2];
+    String[] searchNumber = new String[2];
+	int counter = 1;
+	private Group group_6;
+	private Label lblOutput;
+	private Text outputTxtBox;
+	private Button prog1Btn;
 
 
 	/**
@@ -374,12 +348,12 @@ public class GUI{
 	 * @paramargs
 	 */
 	//	void guiInit() {
-	//		try {
-	//			GUI window= new GUI();
-	//			window.windowOpen();
-	//		} catch (Exception e) {
-	//			e.printStackTrace();
-	//		}
+	//	try {
+	//	GUI window= new GUI();
+	//	window.windowOpen();
+	//	} catch (Exception e) {
+	//	e.printStackTrace();
+	//	}
 	//	}
 
 	/**
@@ -436,6 +410,11 @@ public class GUI{
 		r3ChkBox.setEnabled(true);
 		r3ChkBox.setText("R3");
 		r3ChkBox.setBounds(10, 168, 36, 16);
+
+		rChkArr.add(r0ChkBox);
+		rChkArr.add(r1ChkBox);
+		rChkArr.add(r2ChkBox);
+		rChkArr.add(r3ChkBox);
 
 		r0RadioBtn1 = new Button(group, SWT.RADIO);
 		r0RadioBtn1.setEnabled(false);
@@ -509,6 +488,23 @@ public class GUI{
 		r0RadioBtn16.setEnabled(false);
 		r0RadioBtn16.setBounds(268, 46, 13, 16);
 
+		r0ButtonArr.add(r0RadioBtn1);
+		r0ButtonArr.add(r0RadioBtn2);
+		r0ButtonArr.add(r0RadioBtn3);
+		r0ButtonArr.add(r0RadioBtn4);
+		r0ButtonArr.add(r0RadioBtn5);
+		r0ButtonArr.add(r0RadioBtn6);
+		r0ButtonArr.add(r0RadioBtn7);
+		r0ButtonArr.add(r0RadioBtn8);
+		r0ButtonArr.add(r0RadioBtn9);
+		r0ButtonArr.add(r0RadioBtn10);
+		r0ButtonArr.add(r0RadioBtn11);
+		r0ButtonArr.add(r0RadioBtn12);
+		r0ButtonArr.add(r0RadioBtn13);
+		r0ButtonArr.add(r0RadioBtn14);
+		r0ButtonArr.add(r0RadioBtn15);
+		r0ButtonArr.add(r0RadioBtn16);
+
 		r1RadioBtn1 = new Button(group, SWT.RADIO);
 		r1RadioBtn1.setEnabled(false);
 		r1RadioBtn1.setBounds(52, 87, 13, 16);
@@ -574,6 +570,23 @@ public class GUI{
 		r1RadioBtn16.setEnabled(false);
 		r1RadioBtn16.setBounds(268, 87, 13, 16);
 
+		r1ButtonArr.add(r1RadioBtn1);
+		r1ButtonArr.add(r1RadioBtn2);
+		r1ButtonArr.add(r1RadioBtn3);
+		r1ButtonArr.add(r1RadioBtn4);
+		r1ButtonArr.add(r1RadioBtn5);
+		r1ButtonArr.add(r1RadioBtn6);
+		r1ButtonArr.add(r1RadioBtn7);
+		r1ButtonArr.add(r1RadioBtn8);
+		r1ButtonArr.add(r1RadioBtn9);
+		r1ButtonArr.add(r1RadioBtn10);
+		r1ButtonArr.add(r1RadioBtn11);
+		r1ButtonArr.add(r1RadioBtn12);
+		r1ButtonArr.add(r1RadioBtn13);
+		r1ButtonArr.add(r1RadioBtn14);
+		r1ButtonArr.add(r1RadioBtn15);
+		r1ButtonArr.add(r1RadioBtn16);
+
 		r2RadioBtn1 = new Button(group, SWT.RADIO);
 		r2RadioBtn1.setEnabled(false);
 		r2RadioBtn1.setBounds(52, 128, 13, 16);
@@ -638,6 +651,23 @@ public class GUI{
 		r2RadioBtn16 = new Button(group, SWT.RADIO);
 		r2RadioBtn16.setEnabled(false);
 		r2RadioBtn16.setBounds(268, 128, 13, 16);
+
+		r2ButtonArr.add(r2RadioBtn1);
+		r2ButtonArr.add(r2RadioBtn2);
+		r2ButtonArr.add(r2RadioBtn3);
+		r2ButtonArr.add(r2RadioBtn4);
+		r2ButtonArr.add(r2RadioBtn5);
+		r2ButtonArr.add(r2RadioBtn6);
+		r2ButtonArr.add(r2RadioBtn7);
+		r2ButtonArr.add(r2RadioBtn8);
+		r2ButtonArr.add(r2RadioBtn9);
+		r2ButtonArr.add(r2RadioBtn10);
+		r2ButtonArr.add(r2RadioBtn11);
+		r2ButtonArr.add(r2RadioBtn12);
+		r2ButtonArr.add(r2RadioBtn13);
+		r2ButtonArr.add(r2RadioBtn14);
+		r2ButtonArr.add(r2RadioBtn15);
+		r2ButtonArr.add(r2RadioBtn16);
 
 		r3RadioBtn1 = new Button(group, SWT.RADIO);
 		r3RadioBtn1.setEnabled(false);
@@ -706,6 +736,23 @@ public class GUI{
 		r3RadioBtn16.setEnabled(false);
 		r3RadioBtn16.setBounds(268, 168, 13, 16);
 
+		r3ButtonArr.add(r3RadioBtn1);
+		r3ButtonArr.add(r3RadioBtn2);
+		r3ButtonArr.add(r3RadioBtn3);
+		r3ButtonArr.add(r3RadioBtn4);
+		r3ButtonArr.add(r3RadioBtn5);
+		r3ButtonArr.add(r3RadioBtn6);
+		r3ButtonArr.add(r3RadioBtn7);
+		r3ButtonArr.add(r3RadioBtn8);
+		r3ButtonArr.add(r3RadioBtn9);
+		r3ButtonArr.add(r3RadioBtn10);
+		r3ButtonArr.add(r3RadioBtn11);
+		r3ButtonArr.add(r3RadioBtn12);
+		r3ButtonArr.add(r3RadioBtn13);
+		r3ButtonArr.add(r3RadioBtn14);
+		r3ButtonArr.add(r3RadioBtn15);
+		r3ButtonArr.add(r3RadioBtn16);
+
 		r0TxtBox = new Text(group, SWT.BORDER);
 		r0TxtBox.setEnabled(true);
 		r0TxtBox.setBounds(287, 44, 123, 21);
@@ -721,6 +768,11 @@ public class GUI{
 		r3TxtBox = new Text(group, SWT.BORDER);
 		r3TxtBox.setEnabled(true);
 		r3TxtBox.setBounds(287, 163, 123, 21);
+
+        gRegTextArray.add(r0TxtBox);
+        gRegTextArray.add(r1TxtBox);
+        gRegTextArray.add(r2TxtBox);
+        gRegTextArray.add(r3TxtBox);
 
 		Group group_1 = new Group(shell, SWT.NONE);
 		group_1.setBounds(10, 294, 420, 192);
@@ -793,6 +845,7 @@ public class GUI{
 		x1RadioBtn15 = new Button(group_1, SWT.RADIO);
 		x1RadioBtn15.setEnabled(false);
 		x1RadioBtn15.setBounds(254, 52, 13, 16);
+
 
 		x1TxtBox = new Text(group_1, SWT.BORDER);
 		x1TxtBox.setBounds(287, 47, 123, 21);
@@ -944,7 +997,60 @@ public class GUI{
 		x3RadioBtn16.setEnabled(false);
 		x3RadioBtn16.setBounds(268, 139, 13, 16);
 
-		Group group_2 = new Group(shell, SWT.NONE);
+        x1ButtonArr.add(x1RadioBtn1);
+        x1ButtonArr.add(x1RadioBtn2);
+        x1ButtonArr.add(x1RadioBtn3);
+        x1ButtonArr.add(x1RadioBtn4);
+        x1ButtonArr.add(x1RadioBtn5);
+        x1ButtonArr.add(x1RadioBtn6);
+        x1ButtonArr.add(x1RadioBtn7);
+        x1ButtonArr.add(x1RadioBtn8);
+        x1ButtonArr.add(x1RadioBtn9);
+        x1ButtonArr.add(x1RadioBtn10);
+        x1ButtonArr.add(x1RadioBtn11);
+        x1ButtonArr.add(x1RadioBtn12);
+        x1ButtonArr.add(x1RadioBtn13);
+        x1ButtonArr.add(x1RadioBtn14);
+        x1ButtonArr.add(x1RadioBtn15);
+        x1ButtonArr.add(x1RadioBtn16);
+
+        x2ButtonArr.add(x2RadioBtn1);
+        x2ButtonArr.add(x2RadioBtn2);
+        x2ButtonArr.add(x2RadioBtn3);
+        x2ButtonArr.add(x2RadioBtn4);
+        x2ButtonArr.add(x2RadioBtn5);
+        x2ButtonArr.add(x2RadioBtn6);
+        x2ButtonArr.add(x2RadioBtn7);
+        x2ButtonArr.add(x2RadioBtn8);
+        x2ButtonArr.add(x2RadioBtn9);
+        x2ButtonArr.add(x2RadioBtn10);
+        x2ButtonArr.add(x2RadioBtn11);
+        x2ButtonArr.add(x2RadioBtn12);
+        x2ButtonArr.add(x2RadioBtn13);
+        x2ButtonArr.add(x2RadioBtn14);
+        x2ButtonArr.add(x2RadioBtn15);
+        x2ButtonArr.add(x2RadioBtn16);
+
+        x3ButtonArr.add(x3RadioBtn1);
+        x3ButtonArr.add(x3RadioBtn2);
+        x3ButtonArr.add(x3RadioBtn3);
+        x3ButtonArr.add(x3RadioBtn4);
+        x3ButtonArr.add(x3RadioBtn5);
+        x3ButtonArr.add(x3RadioBtn6);
+        x3ButtonArr.add(x3RadioBtn7);
+        x3ButtonArr.add(x3RadioBtn8);
+        x3ButtonArr.add(x3RadioBtn9);
+        x3ButtonArr.add(x3RadioBtn10);
+        x3ButtonArr.add(x3RadioBtn11);
+        x3ButtonArr.add(x3RadioBtn12);
+        x3ButtonArr.add(x3RadioBtn13);
+        x3ButtonArr.add(x3RadioBtn14);
+        x3ButtonArr.add(x3RadioBtn15);
+        x3ButtonArr.add(x3RadioBtn16);
+
+
+
+        Group group_2 = new Group(shell, SWT.NONE);
 		group_2.setBounds(436, 70, 520, 211);
 
 		Label label_2 = new Label(group_2, SWT.NONE);
@@ -1135,6 +1241,7 @@ public class GUI{
 
 		currentInstrTextBox = new Text(group_2, SWT.BORDER);
 		currentInstrTextBox.setBounds(357, 82, 153, 21);
+//		String RESULT= fetchInstructions(currentInstrTextBox);
 
 		memDataTextBox = new Text(group_2, SWT.BORDER);
 		memDataTextBox.setBounds(357, 123, 153, 21);
@@ -1149,163 +1256,43 @@ public class GUI{
 		currAddressRadioBtn1 = new Button( group_2,SWT.RADIO);
 		currAddressRadioBtn1.setBounds(122, 46, 13, 16);
 		currAddressRadioBtn1.setEnabled(false);
+		
+				ldxChkBox = new Button(group_2, SWT.CHECK);
+				ldxChkBox.setBounds(230, 172, 47, 16);
+				ldxChkBox.setText("LDX");
+				
+						ldrChkBox = new Button(group_2, SWT.CHECK);
+						ldrChkBox.setBounds(168, 172, 47, 16);
+						ldrChkBox.setText("LDR");
+						
+								ldaChkBox = new Button(group_2, SWT.CHECK);
+								ldaChkBox.setBounds(287, 172, 47, 16);
+								ldaChkBox.setText("LDA");
+								
+										strChkBox = new Button(group_2, SWT.CHECK);
+										strChkBox.setBounds(344, 172, 47, 16);
+										strChkBox.setText("STR");
+										
+												stxChkBox = new Button(group_2, SWT.CHECK);
+												stxChkBox.setBounds(396, 172, 55, 16);
+												stxChkBox.setText("STX");
+												
+												Label lblOperations = new Label(group_2, SWT.NONE);
+												lblOperations.setBounds(85, 173, 65, 15);
+												lblOperations.setText("Operations");
 
 		Group group_3 = new Group(shell, SWT.NONE);
 		group_3.setBounds(436, 294, 520, 192);
-
-		Label label_6 = new Label(group_3, SWT.NONE);
-		label_6.setText("Operation");
-		//label_6.setFont(SWTResourceManager.getFont("Times New Roman", 12, SWT.BOLD));
-		label_6.setBounds(208, 20, 100, 22);
-
-		ldrChkBox = new Button(group_3, SWT.CHECK);
-		ldrChkBox.setText("LDR");
-		ldrChkBox.setBounds(34, 45, 54, 16);
-
-		ldaChkBox = new Button(group_3, SWT.CHECK);
-		ldaChkBox.setText("LDA");
-		ldaChkBox.setBounds(34, 67, 54, 16);
-
-		ldxChkBox = new Button(group_3, SWT.CHECK);
-		ldxChkBox.setText("LDX");
-		ldxChkBox.setBounds(34, 89, 54, 16);
-
-		strChkBox = new Button(group_3, SWT.CHECK);
-		strChkBox.setText("STR");
-		strChkBox.setBounds(34, 111, 54, 16);
-
-		stxChkBox = new Button(group_3, SWT.CHECK);
-		stxChkBox.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-			}
-		});
-		stxChkBox.setText("STX");
-		stxChkBox.setBounds(34, 131, 54, 16);
-
-		jzChkBox = new Button(group_3, SWT.CHECK);
-		jzChkBox.setText("JZ");
-		jzChkBox.setBounds(34, 153, 54, 16);
-
-		jneChkBox = new Button(group_3, SWT.CHECK);
-		jneChkBox.setText("JNE");
-		jneChkBox.setBounds(111, 45, 54, 16);
-
-		jccChkBox = new Button(group_3, SWT.CHECK);
-		jccChkBox.setText("JCC");
-		jccChkBox.setBounds(111, 67, 54, 16);
-
-		jmaChkBox = new Button(group_3, SWT.CHECK);
-		jmaChkBox.setText("JMA");
-		jmaChkBox.setBounds(111, 89, 54, 16);
-
-		jsrChkBox = new Button(group_3, SWT.CHECK);
-		jsrChkBox.setText("JSR");
-		jsrChkBox.setBounds(111, 111, 54, 16);
-
-		rfsChkBox = new Button(group_3, SWT.CHECK);
-		rfsChkBox.setText("RFS");
-		rfsChkBox.setBounds(111, 131, 54, 16);
-
-		sobChkBox = new Button(group_3, SWT.CHECK);
-		sobChkBox.setText("SOB");
-		sobChkBox.setBounds(111, 153, 54, 16);
-
-		jgeChkBox = new Button(group_3, SWT.CHECK);
-		jgeChkBox.setText("JGE");
-		jgeChkBox.setBounds(189, 45, 54, 16);
-
-		amrChkBox = new Button(group_3, SWT.CHECK);
-		amrChkBox.setText("AMR");
-		amrChkBox.setBounds(189, 67, 54, 16);
-
-		smrChkBox = new Button(group_3, SWT.CHECK);
-		smrChkBox.setText("SMR");
-		smrChkBox.setBounds(189, 89, 54, 16);
-
-		airChkBox = new Button(group_3, SWT.CHECK);
-		airChkBox.setText("AIR");
-		airChkBox.setBounds(189, 111, 54, 16);
-
-		sirChkBox = new Button(group_3, SWT.CHECK);
-		sirChkBox.setText("SIR");
-		sirChkBox.setBounds(189, 131, 54, 16);
-
-		mltChkBox = new Button(group_3, SWT.CHECK);
-		mltChkBox.setText("MLT");
-		mltChkBox.setBounds(189, 153, 54, 16);
-
-		dvdChkBox = new Button(group_3, SWT.CHECK);
-		dvdChkBox.setText("DVD");
-		dvdChkBox.setBounds(264, 45, 54, 16);
-
-		trrChkBox = new Button(group_3, SWT.CHECK);
-		trrChkBox.setText("TRR");
-		trrChkBox.setBounds(264, 67, 54, 16);
-
-		andChkBox = new Button(group_3, SWT.CHECK);
-		andChkBox.setText("AND");
-		andChkBox.setBounds(264, 89, 54, 16);
-
-		orrChkBox = new Button(group_3, SWT.CHECK);
-		orrChkBox.setText("ORR");
-		orrChkBox.setBounds(264, 111, 54, 16);
-
-		notChkBox = new Button(group_3, SWT.CHECK);
-		notChkBox.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-			}
-		});
-		notChkBox.setText("NOT");
-		notChkBox.setBounds(264, 131, 54, 16);
-
-		srcCkhBox = new Button(group_3, SWT.CHECK);
-		srcCkhBox.setText("SRC");
-		srcCkhBox.setBounds(264, 153, 54, 16);
-
-		rrcChkBox = new Button(group_3, SWT.CHECK);
-		rrcChkBox.setText("RRC");
-		rrcChkBox.setBounds(344, 45, 54, 16);
-
-		inChkBox = new Button(group_3, SWT.CHECK);
-		inChkBox.setText("IN");
-		inChkBox.setBounds(344, 67, 54, 16);
-
-		outChkBox = new Button(group_3, SWT.CHECK);
-		outChkBox.setText("OUT");
-		outChkBox.setBounds(344, 89, 54, 16);
-
-		faddChkBox = new Button(group_3, SWT.CHECK);
-		faddChkBox.setText("FADD");
-		faddChkBox.setBounds(344, 111, 54, 16);
-
-		fsubChkBox = new Button(group_3, SWT.CHECK);
-		fsubChkBox.setText("FSUB");
-		fsubChkBox.setBounds(344, 131, 54, 16);
-
-		vaddChkBox = new Button(group_3, SWT.CHECK);
-		vaddChkBox.setText("VADD");
-		vaddChkBox.setBounds(344, 153, 54, 16);
-
-		vsubChkBox = new Button(group_3, SWT.CHECK);
-		vsubChkBox.setText("VSUB");
-		vsubChkBox.setBounds(420, 45, 54, 16);
-
-		cnvrtChkBox = new Button(group_3, SWT.CHECK);
-		cnvrtChkBox.setText("CNVRT");
-		cnvrtChkBox.setBounds(420, 67, 54, 16);
-
-		ldfrChkBox = new Button(group_3, SWT.CHECK);
-		ldfrChkBox.setText("LDFR");
-		ldfrChkBox.setBounds(420, 89, 54, 16);
-
-		stfrChkBox = new Button(group_3, SWT.CHECK);
-		stfrChkBox.setText("STFR");
-		stfrChkBox.setBounds(420, 111, 54, 16);
+		
+				Label lblInput = new Label(group_3, SWT.NONE);
+				lblInput.setBounds(23, 22, 43, 15);
+				lblInput.setText("Input");
+				
+						statusTxtBox = new Text(group_3, SWT.BORDER);
+						statusTxtBox.setBounds(23, 43, 473, 139);
 
 		Group group_4 = new Group(shell, SWT.NONE);
-		group_4.setBounds(10, 504, 946, 161);
+		group_4.setBounds(10, 504, 420, 161);
 
 		standardBtn = new Button(group_4, SWT.NONE);
 		standardBtn.setText("Standard");
@@ -1314,47 +1301,52 @@ public class GUI{
 
 		singleStepBtn = new Button(group_4, SWT.NONE);
 		singleStepBtn.setText("Single Step");
-		singleStepBtn.setBounds(152, 44, 75, 25);
+		singleStepBtn.setBounds(106, 44, 75, 25);
 		singleStepBtn.setEnabled(false);
 
 		iplBtn = new Button(group_4, SWT.NONE);
+		iplBtn.setText("IPL");
+		iplBtn.setBounds(199, 44, 75, 25);
+
 		iplBtn.addSelectionListener(new SelectionAdapter() {
+ 			@Override
+ 			public void widgetSelected(SelectionEvent e) {
+                			}
+ 		});
+
+
+		fetchBtn = new Button(group_4, SWT.NONE);
+		fetchBtn.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 			}
 		});
-		iplBtn.setText("IPL");
-		iplBtn.setBounds(294, 44, 75, 25);
 
-
-		haltBtn = new Button(group_4, SWT.NONE);
+		Button haltBtn = new Button(group_4, SWT.NONE);
 		haltBtn.setText("Halt");
-		haltBtn.setBounds(152, 106, 75, 25);
+		haltBtn.setBounds(106, 106, 75, 25);
 
-		Label label_9 = new Label(group_4, SWT.NONE);
-		label_9.setText("Status");
-		label_9.setBounds(412, 44, 43, 15);
-
-		clearBtn = new Button(group_4, SWT.NONE);
+		Button clearBtn = new Button(group_4, SWT.NONE);
 		clearBtn.setText("Clear");
-		clearBtn.setBounds(294, 106, 75, 25);
-
-		statusTxtBox = new Text(group_4, SWT.BORDER);
-		statusTxtBox.setBounds(412, 66, 503, 66);
+		clearBtn.setBounds(199, 106, 75, 25);
 
 		Label label_10 = new Label(group_4, SWT.NONE);
 		label_10.setText("Execution");
 		//label_10.setFont(SWTResourceManager.getFont("Times New Roman", 12, SWT.BOLD));
 		label_10.setBounds(10, 10, 85, 28);
 
-		setBtn = new Button(group_4, SWT.NONE);
-		setBtn.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-			}
-		});
-		setBtn.setBounds(10, 106, 75, 25);
-		setBtn.setText("Set");
+        fetchBtn = new Button(group_4, SWT.NONE);
+        		fetchBtn.addSelectionListener(new SelectionAdapter() {
+ 			@Override
+ 		public void widgetSelected(SelectionEvent e) {
+                			}
+ 		});
+        		fetchBtn.setBounds(10, 106, 75, 25);
+        		fetchBtn.setText("Fetch");
+        		
+        		prog1Btn = new Button(group_4, SWT.NONE);
+        		prog1Btn.setBounds(293, 76, 103, 25);
+        		prog1Btn.setText("Run Program 1");
 
 		Group group_5 = new Group(shell, SWT.NONE);
 		group_5.setBounds(962, 70, 398, 595);
@@ -1368,21 +1360,27 @@ public class GUI{
 		label_12.setText("CC");
 		label_12.setBounds(30, 49, 36, 15);
 
-		ccRadioBtn1 = new Button(group_5, SWT.RADIO);
+		Button ccRadioBtn1 = new Button(group_5, SWT.RADIO);
 		ccRadioBtn1.setEnabled(false);
 		ccRadioBtn1.setBounds(70, 48, 13, 16);
 
-		ccRadioBtn2 = new Button(group_5, SWT.RADIO);
+		Button ccRadioBtn2 = new Button(group_5, SWT.RADIO);
 		ccRadioBtn2.setEnabled(false);
 		ccRadioBtn2.setBounds(85, 48, 13, 16);
 
-		ccRadioBtn3 = new Button(group_5, SWT.RADIO);
+		Button ccRadioBtn3 = new Button(group_5, SWT.RADIO);
 		ccRadioBtn3.setEnabled(false);
 		ccRadioBtn3.setBounds(100, 48, 13, 16);
 
-		ccRadioBtn4 = new Button(group_5, SWT.RADIO);
+		Button ccRadioBtn4 = new Button(group_5, SWT.RADIO);
 		ccRadioBtn4.setEnabled(false);
 		ccRadioBtn4.setBounds(114, 48, 13, 16);
+
+        ccButtonArray = new ArrayList<>();
+        ccButtonArray.add(ccRadioBtn1);
+		ccButtonArray.add(ccRadioBtn2);
+		ccButtonArray.add(ccRadioBtn3);
+		ccButtonArray.add(ccRadioBtn4);
 
 		Label label_13 = new Label(group_5, SWT.NONE);
 		label_13.setText("MFR");
@@ -1404,9 +1402,12 @@ public class GUI{
 		mfrRadioBtn4.setEnabled(false);
 		mfrRadioBtn4.setBounds(114, 89, 13, 16);
 
-		pcRadioBtn1 = new Button(group_5, SWT.RADIO);
+        pcRadioButtonArray = new ArrayList<>();
+
+        pcRadioBtn1 = new Button(group_5, SWT.RADIO);
 		pcRadioBtn1.setEnabled(false);
 		pcRadioBtn1.setBounds(70, 130, 13, 16);
+
 
 
 		pcRadioBtn2 = new Button(group_5, SWT.RADIO);
@@ -1453,51 +1454,68 @@ public class GUI{
 		pcRadioBtn12.setEnabled(false);
 		pcRadioBtn12.setBounds(228, 130, 13, 16);
 
-		raRadioBtn1 = new Button(group_5, SWT.RADIO);
+        pcRadioButtonArray.add(pcRadioBtn1);
+        pcRadioButtonArray.add(pcRadioBtn2);
+        pcRadioButtonArray.add(pcRadioBtn3);
+        pcRadioButtonArray.add(pcRadioBtn4);
+        pcRadioButtonArray.add(pcRadioBtn5);
+        pcRadioButtonArray.add(pcRadioBtn6);
+        pcRadioButtonArray.add(pcRadioBtn7);
+        pcRadioButtonArray.add(pcRadioBtn8);
+        pcRadioButtonArray.add(pcRadioBtn9);
+        pcRadioButtonArray.add(pcRadioBtn10);
+        pcRadioButtonArray.add(pcRadioBtn11);
+        pcRadioButtonArray.add(pcRadioBtn12);
+
+        xChkArr.add(x1ChkBox);
+        xChkArr.add(x2ChkBox);
+        xChkArr.add(x3ChkBox);
+
+		Button raRadioBtn1 = new Button(group_5, SWT.RADIO);
 		raRadioBtn1.setEnabled(false);
 		raRadioBtn1.setBounds(70, 170, 13, 16);
 
-		raRadioBtn2 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn2 = new Button(group_5, SWT.RADIO);
 		raRadioBtn2.setEnabled(false);
 		raRadioBtn2.setBounds(85, 170, 13, 16);
 
-		raRadioBtn3 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn3 = new Button(group_5, SWT.RADIO);
 		raRadioBtn3.setEnabled(false);
 		raRadioBtn3.setBounds(100, 170, 13, 16);
 
-		raRadioBtn4 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn4 = new Button(group_5, SWT.RADIO);
 		raRadioBtn4.setEnabled(false);
 		raRadioBtn4.setBounds(114, 170, 13, 16);
 
-		raRadioBtn5 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn5 = new Button(group_5, SWT.RADIO);
 		raRadioBtn5.setEnabled(false);
 		raRadioBtn5.setBounds(128, 170, 13, 16);
 
-		raRadioBtn6 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn6 = new Button(group_5, SWT.RADIO);
 		raRadioBtn6.setEnabled(false);
 		raRadioBtn6.setBounds(142, 170, 13, 16);
 
-		raRadioBtn7 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn7 = new Button(group_5, SWT.RADIO);
 		raRadioBtn7.setEnabled(false);
 		raRadioBtn7.setBounds(157, 170, 13, 16);
 
-		raRadioBtn8 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn8 = new Button(group_5, SWT.RADIO);
 		raRadioBtn8.setEnabled(false);
 		raRadioBtn8.setBounds(172, 170, 13, 16);
 
-		raRadioBtn9 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn9 = new Button(group_5, SWT.RADIO);
 		raRadioBtn9.setEnabled(false);
 		raRadioBtn9.setBounds(186, 170, 13, 16);
 
-		raRadioBtn10 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn10 = new Button(group_5, SWT.RADIO);
 		raRadioBtn10.setEnabled(false);
 		raRadioBtn10.setBounds(200, 170, 13, 16);
 
-		raRadioBtn11 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn11 = new Button(group_5, SWT.RADIO);
 		raRadioBtn11.setEnabled(false);
 		raRadioBtn11.setBounds(214, 170, 13, 16);
 
-		raRadioBtn12 = new Button(group_5, SWT.RADIO);
+		Button raRadioBtn12 = new Button(group_5, SWT.RADIO);
 		raRadioBtn12.setEnabled(false);
 		raRadioBtn12.setBounds(228, 170, 13, 16);
 
@@ -1577,6 +1595,23 @@ public class GUI{
 		irRadioBtn16 = new Button(group_5, SWT.RADIO);
 		irRadioBtn16.setEnabled(false);
 		irRadioBtn16.setBounds(286, 210, 13, 16);
+
+        irButtonArr.add(irRadioBtn1);
+        irButtonArr.add(irRadioBtn2);
+        irButtonArr.add(irRadioBtn3);
+        irButtonArr.add(irRadioBtn4);
+        irButtonArr.add(irRadioBtn5);
+        irButtonArr.add(irRadioBtn6);
+        irButtonArr.add(irRadioBtn7);
+        irButtonArr.add(irRadioBtn8);
+        irButtonArr.add(irRadioBtn9);
+        irButtonArr.add(irRadioBtn10);
+        irButtonArr.add(irRadioBtn11);
+        irButtonArr.add(irRadioBtn12);
+        irButtonArr.add(irRadioBtn13);
+        irButtonArr.add(irRadioBtn14);
+        irButtonArr.add(irRadioBtn15);
+        irButtonArr.add(irRadioBtn16);
 
 		irTxtBox = new Text(group_5, SWT.BORDER);
 		irTxtBox.setBounds(70, 232, 153, 21);
@@ -1660,6 +1695,23 @@ public class GUI{
 		marRadioBtn16.setEnabled(false);
 		marRadioBtn16.setBounds(286, 271, 13, 16);
 
+        marButtonArr.add(marRadioBtn1);
+        marButtonArr.add(marRadioBtn2);
+        marButtonArr.add(marRadioBtn3);
+        marButtonArr.add(marRadioBtn4);
+        marButtonArr.add(marRadioBtn5);
+        marButtonArr.add(marRadioBtn6);
+        marButtonArr.add(marRadioBtn7);
+        marButtonArr.add(marRadioBtn8);
+        marButtonArr.add(marRadioBtn9);
+        marButtonArr.add(marRadioBtn10);
+        marButtonArr.add(marRadioBtn11);
+        marButtonArr.add(marRadioBtn12);
+        marButtonArr.add(marRadioBtn13);
+        marButtonArr.add(marRadioBtn14);
+        marButtonArr.add(marRadioBtn15);
+        marButtonArr.add(marRadioBtn16);
+
 		marTxtBox = new Text(group_5, SWT.BORDER);
 		marTxtBox.setBounds(70, 294, 153, 21);
 
@@ -1734,6 +1786,27 @@ public class GUI{
 		mbrRadioBtn16.setEnabled(false);
 		mbrRadioBtn16.setBounds(286, 330, 13, 16);
 
+        mbrButtonArr.add(mbrRadioBtn1);
+        mbrButtonArr.add(mbrRadioBtn2);
+        mbrButtonArr.add(mbrRadioBtn3);
+        mbrButtonArr.add(mbrRadioBtn4);
+        mbrButtonArr.add(mbrRadioBtn5);
+        mbrButtonArr.add(mbrRadioBtn6);
+        mbrButtonArr.add(mbrRadioBtn7);
+        mbrButtonArr.add(mbrRadioBtn8);
+        mbrButtonArr.add(mbrRadioBtn9);
+        mbrButtonArr.add(mbrRadioBtn10);
+        mbrButtonArr.add(mbrRadioBtn11);
+        mbrButtonArr.add(mbrRadioBtn12);
+        mbrButtonArr.add(mbrRadioBtn13);
+        mbrButtonArr.add(mbrRadioBtn14);
+        mbrButtonArr.add(mbrRadioBtn15);
+        mbrButtonArr.add(mbrRadioBtn16);
+
+        iRegTextArray.add(x1TxtBox);
+        iRegTextArray.add(x2TxtBox);
+        iRegTextArray.add(x3TxtBox);
+
 		mbrTxtBox = new Text(group_5, SWT.BORDER);
 		mbrTxtBox.setBounds(70, 353, 153, 21);
 
@@ -1741,67 +1814,67 @@ public class GUI{
 		label_19.setText("MSR");
 		label_19.setBounds(30, 392, 36, 15);
 
-		msrRadioBtn1 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn1 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn1.setEnabled(false);
 		msrRadioBtn1.setBounds(70, 391, 13, 16);
 
-		msrRadioBtn2 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn2 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn2.setEnabled(false);
 		msrRadioBtn2.setBounds(85, 391, 13, 16);
 
-		msrRadioBtn3 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn3 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn3.setEnabled(false);
 		msrRadioBtn3.setBounds(100, 391, 13, 16);
 
-		msrRadioBtn4 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn4 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn4.setEnabled(false);
 		msrRadioBtn4.setBounds(114, 391, 13, 16);
 
-		msrRadioBtn5 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn5 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn5.setEnabled(false);
 		msrRadioBtn5.setBounds(128, 391, 13, 16);
 
-		msrRadioBtn6 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn6 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn6.setEnabled(false);
 		msrRadioBtn6.setBounds(143, 391, 13, 16);
 
-		msrRadioBtn7 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn7 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn7.setEnabled(false);
 		msrRadioBtn7.setBounds(158, 391, 13, 16);
 
-		msrRadioBtn8 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn8 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn8.setEnabled(false);
 		msrRadioBtn8.setBounds(172, 391, 13, 16);
 
-		msrRadioBtn9 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn9 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn9.setEnabled(false);
 		msrRadioBtn9.setBounds(186, 391, 13, 16);
 
-		msrRadioBtn10 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn10 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn10.setEnabled(false);
 		msrRadioBtn10.setBounds(200, 391, 13, 16);
 
-		msrRadioBtn11 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn11 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn11.setEnabled(false);
 		msrRadioBtn11.setBounds(214, 391, 13, 16);
 
-		msrRadioBtn12 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn12 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn12.setEnabled(false);
 		msrRadioBtn12.setBounds(228, 391, 13, 16);
 
-		msrRadioBtn13 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn13 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn13.setEnabled(false);
 		msrRadioBtn13.setBounds(243, 391, 13, 16);
 
-		msrRadioBtn14 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn14 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn14.setEnabled(false);
 		msrRadioBtn14.setBounds(258, 391, 13, 16);
 
-		msrRadioBtn15 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn15 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn15.setEnabled(false);
 		msrRadioBtn15.setBounds(272, 391, 13, 16);
 
-		msrRadioBtn16 = new Button(group_5, SWT.RADIO);
+		Button msrRadioBtn16 = new Button(group_5, SWT.RADIO);
 		msrRadioBtn16.setEnabled(false);
 		msrRadioBtn16.setBounds(286, 391, 13, 16);
 
@@ -1840,12 +1913,22 @@ public class GUI{
 		msrTxtBox.setBounds(70, 413, 153, 21);
 
 		Label lblSimulator = new Label(shell, SWT.NONE);
-		lblSimulator.setForeground(SWTResourceManager.getColor(SWT.COLOR_DARK_RED));
-		lblSimulator.setFont(SWTResourceManager.getFont("Segoe UI", 14, SWT.BOLD));
-		//		lblSimulator.setForeground(SWTResourceManager.getColor(SWT.COLOR_RED));
-		//		lblSimulator.setFont(SWTResourceManager.getFont("Times New Roman", 20, SWT.BOLD | SWT.ITALIC));
-		lblSimulator.setBounds(629, 32, 114, 32);
+		lblSimulator.setFont(SWTResourceManager.getFont("Segoe UI", 14, SWT.NORMAL));
+		//lblSimulator.setFont(SWTResourceManager.getFont("Segoe UI", 14, SWT.BOLD));
+		//	lblSimulator.setForeground(SWTResourceManager.getColor(SWT.COLOR_RED));
+		//	lblSimulator.setFont(SWTResourceManager.getFont("Times New Roman", 20, SWT.BOLD | SWT.ITALIC));
+		lblSimulator.setBounds(631, 30, 124, 32);
 		lblSimulator.setText("ArchSim12");
+		
+		group_6 = new Group(shell, SWT.NONE);
+		group_6.setBounds(436, 504, 520, 161);
+		
+		lblOutput = new Label(group_6, SWT.NONE);
+		lblOutput.setText("Output");
+		lblOutput.setBounds(27, 20, 43, 15);
+		
+		outputTxtBox = new Text(group_6, SWT.BORDER);
+		outputTxtBox.setBounds(27, 41, 469, 110);
 
 
 		listener = new Listener() {
@@ -1860,9 +1943,7 @@ public class GUI{
 
 					//pcRadioBtn2.setSelection(true);
 
-					setRadioBtn12((Integer.toBinaryString(0x10000 |Integer.parseInt(archSetup.PC.getValue())).substring(1)).substring(4, 16),
-							pcRadioBtn1,pcRadioBtn2,pcRadioBtn3,pcRadioBtn4,pcRadioBtn5,pcRadioBtn6,pcRadioBtn7
-							,pcRadioBtn8,pcRadioBtn9,pcRadioBtn10,pcRadioBtn11,pcRadioBtn12);
+					setRadioBtn((Integer.toBinaryString(0x10000 |Integer.parseInt(archSetup.PC.getValue())).substring(1)).substring(4, 16), pcRadioButtonArray);
 
 					iplBtn.setEnabled(false);
 					singleStepBtn.setEnabled(true);
@@ -1912,320 +1993,21 @@ public class GUI{
 					standardBtn.setEnabled(false);
 					statusTxtBox.setText("Program Halted!");
 				}
-				else if(event.widget == clearBtn)
-				{
-					r0TxtBox.setText("");
-					r1TxtBox.setText("");
-					r2TxtBox.setText("");
-					r3TxtBox.setText("");
-					x1TxtBox.setText("");
-					x2TxtBox.setText("");
-					x3TxtBox.setText("");
-					currentInstrTextBox.setText("");
-					memDataTextBox.setText("");
-					currentAddTxtBox.setText("");
-					statusTxtBox.setText("");
-					irTxtBox.setText("");
-					marTxtBox.setText("");
-					mbrTxtBox.setText("");
-					ccTxtBox.setText("");
-					mfrTxtBox.setText("");
-					pcTxtBox.setText("");
-					raTxtBox.setText("");
-					iarTxtBox.setText("");
-					irrTxtBox.setText("");
-					msrTxtBox.setText("");
 
-					pcRadioBtn4.setSelection(false);
-					pcRadioBtn6.setSelection(false);
-					pcRadioBtn5.setSelection(false);
-					pcRadioBtn11.setSelection(false);
-					pcRadioBtn12.setSelection(false);
-					pcRadioBtn10.setSelection(false);
-					pcRadioBtn9.setSelection(false);
-					pcRadioBtn8.setSelection(false);
-					pcRadioBtn7.setSelection(false);
-					pcRadioBtn2.setSelection(false);
-					pcRadioBtn1.setSelection(false);
-					pcRadioBtn3.setSelection(false);
+                else if(event.widget == fetchBtn)
+                {
 
-					marRadioBtn1.setSelection(false);
-					marRadioBtn10.setSelection(false);
-					marRadioBtn15.setSelection(false);
-					marRadioBtn16.setSelection(false);
-					marRadioBtn14.setSelection(false);
-					marRadioBtn13.setSelection(false);
-					marRadioBtn12.setSelection(false);
-					marRadioBtn11.setSelection(false);
-					marRadioBtn9.setSelection(false);
-					marRadioBtn2.setSelection(false);
-					marRadioBtn3.setSelection(false);
-					marRadioBtn5.setSelection(false);
-					marRadioBtn4.setSelection(false);
-					marRadioBtn6.setSelection(false);
-					marRadioBtn7.setSelection(false);
-					marRadioBtn8.setSelection(false);
+                    if(archSetup.flag==0)
+                    {
+                        mainNumber=fetchInstructions(statusTxtBox).split(":");
+                    }
+                    else if(archSetup.flag==1)
+                    {
+                        searchNumber= fetchInstructions(statusTxtBox).split(":");
+                    }
 
-					mbrRadioBtn7.setSelection(false);
-					mbrRadioBtn11.setSelection(false);
-					mbrRadioBtn15.setSelection(false);
-					mbrRadioBtn16.setSelection(false);
-					mbrRadioBtn14.setSelection(false);
-					mbrRadioBtn13.setSelection(false);
-					mbrRadioBtn12.setSelection(false);
-					mbrRadioBtn10.setSelection(false);
-					mbrRadioBtn9.setSelection(false);
-					mbrRadioBtn8.setSelection(false);
-					mbrRadioBtn6.setSelection(false);
-					mbrRadioBtn5.setSelection(false);
-					mbrRadioBtn4.setSelection(false);
-					mbrRadioBtn3.setSelection(false);
-					mbrRadioBtn2.setSelection(false);
-					mbrRadioBtn1.setSelection(false);
-
-
-					irRadioBtn15.setSelection(false);
-					irRadioBtn2.setSelection(false);
-					irRadioBtn5.setSelection(false);
-					irRadioBtn1.setSelection(false);
-					irRadioBtn3.setSelection(false);
-					irRadioBtn4.setSelection(false);
-					irRadioBtn11.setSelection(false);
-					irRadioBtn10.setSelection(false);
-					irRadioBtn9.setSelection(false);
-					irRadioBtn6.setSelection(false);
-					irRadioBtn12.setSelection(false);
-					irRadioBtn8.setSelection(false);
-					irRadioBtn13.setSelection(false);
-					irRadioBtn7.setSelection(false);
-					irRadioBtn14.setSelection(false);
-					irRadioBtn16.setSelection(false);
-
-					r0RadioBtn15.setSelection(false);
-					r0RadioBtn10.setSelection(false);
-					r0RadioBtn12.setSelection(false);
-					r0RadioBtn8.setSelection(false);
-					r0RadioBtn9.setSelection(false);
-					r0RadioBtn5.setSelection(false);
-					r0RadioBtn6.setSelection(false);
-					r0RadioBtn4.setSelection(false);
-					r0RadioBtn3.setSelection(false);
-					r0RadioBtn2.setSelection(false);
-					r0RadioBtn1.setSelection(false);
-					r0RadioBtn14.setSelection(false);
-					r0RadioBtn7.setSelection(false);
-					r0RadioBtn16.setSelection(false);
-					r0RadioBtn11.setSelection(false);
-					r0RadioBtn13.setSelection(false);
-
-					r1RadioBtn2.setSelection(false);
-					r1RadioBtn1.setSelection(false);
-					r1RadioBtn3.setSelection(false);
-					r1RadioBtn4.setSelection(false);
-					r1RadioBtn5.setSelection(false);
-					r1RadioBtn6.setSelection(false);
-					r1RadioBtn7.setSelection(false);
-					r1RadioBtn9.setSelection(false);
-					r1RadioBtn8.setSelection(false);
-					r1RadioBtn11.setSelection(false);
-					r1RadioBtn10.setSelection(false);
-					r1RadioBtn12.setSelection(false);
-					r1RadioBtn16.setSelection(false);
-					r1RadioBtn13.setSelection(false);
-					r1RadioBtn14.setSelection(false);
-					r1RadioBtn15.setSelection(false);
-
-
-					r2RadioBtn2.setSelection(false);
-					r2RadioBtn1.setSelection(false);
-					r2RadioBtn3.setSelection(false);
-					r2RadioBtn10.setSelection(false);
-					r2RadioBtn4.setSelection(false);
-					r2RadioBtn5.setSelection(false);
-					r2RadioBtn6.setSelection(false);
-					r2RadioBtn7.setSelection(false);
-					r2RadioBtn8.setSelection(false);
-					r2RadioBtn9.setSelection(false);
-					r2RadioBtn11.setSelection(false);
-					r2RadioBtn12.setSelection(false);
-					r2RadioBtn13.setSelection(false);
-					r2RadioBtn14.setSelection(false);
-					r2RadioBtn15.setSelection(false);
-					r2RadioBtn16.setSelection(false);
-
-					r3RadioBtn15.setSelection(false);
-					r3RadioBtn12.setSelection(false);
-					r3RadioBtn13.setSelection(false);
-					r3RadioBtn6.setSelection(false);
-					r3RadioBtn7.setSelection(false);
-					r3RadioBtn9.setSelection(false);
-					r3RadioBtn10.setSelection(false);
-					r3RadioBtn11.setSelection(false);
-					r3RadioBtn8.setSelection(false);
-					r3RadioBtn14.setSelection(false);
-					r3RadioBtn16.setSelection(false);
-					r3RadioBtn3.setSelection(false);
-					r3RadioBtn4.setSelection(false);
-					r3RadioBtn2.setSelection(false);
-					r3RadioBtn5.setSelection(false);
-					r3RadioBtn1.setSelection(false);
-
-					x1RadioBtn2.setSelection(false);
-					x1RadioBtn1.setSelection(false);
-					x1RadioBtn5.setSelection(false);
-					x1RadioBtn3.setSelection(false);
-					x1RadioBtn4.setSelection(false);
-					x1RadioBtn6.setSelection(false);
-					x1RadioBtn7.setSelection(false);
-					x1RadioBtn8.setSelection(false);
-					x1RadioBtn10.setSelection(false);
-					x1RadioBtn9.setSelection(false);
-					x1RadioBtn11.setSelection(false);
-					x1RadioBtn12.setSelection(false);
-					x1RadioBtn13.setSelection(false);
-					x1RadioBtn14.setSelection(false);
-					x1RadioBtn15.setSelection(false);
-					x2RadioBtn16.setSelection(false);
-					x1RadioBtn16.setSelection(false);
-					x3RadioBtn16.setSelection(false);
-
-					x2RadioBtn14.setSelection(false);
-					x2RadioBtn6.setSelection(false);
-					x2RadioBtn13.setSelection(false);
-					x2RadioBtn15.setSelection(false);
-					x2RadioBtn5.setSelection(false);
-					x2RadioBtn11.setSelection(false);
-					x2RadioBtn12.setSelection(false);
-					x2RadioBtn10.setSelection(false);
-					x2RadioBtn9.setSelection(false);
-					x2RadioBtn7.setSelection(false);
-					x2RadioBtn8.setSelection(false);
-					x2RadioBtn3.setSelection(false);
-					x2RadioBtn4.setSelection(false);
-					x2RadioBtn2.setSelection(false);
-					x2RadioBtn1.setSelection(false);
-
-
-					x3RadioBtn2.setSelection(false);
-					x3RadioBtn1.setSelection(false);
-					x3RadioBtn3.setSelection(false);
-					x3RadioBtn4.setSelection(false);
-					x3RadioBtn5.setSelection(false);
-					x3RadioBtn6.setSelection(false);
-					x3RadioBtn7.setSelection(false);
-					x3RadioBtn8.setSelection(false);
-					x3RadioBtn10.setSelection(false);
-					x3RadioBtn9.setSelection(false);
-					x3RadioBtn11.setSelection(false);
-					x3RadioBtn12.setSelection(false);
-					x3RadioBtn13.setSelection(false);
-					x3RadioBtn14.setSelection(false);
-					x3RadioBtn15.setSelection(false);
-
-					mfrRadioBtn2.setSelection(false);
-					mfrRadioBtn3.setSelection(false);
-					mfrRadioBtn1.setSelection(false);
-					mfrRadioBtn4.setSelection(false);
-
-					iplBtn.setSelection(false);
-
-					currAddressRadioBtn2.setSelection(false);
-					currAddressRadioBtn1.setSelection(false);
-					currAddressRadioBtn3.setSelection(false);
-					currAddressRadioBtn4.setSelection(false);
-					currAddressRadioBtn5.setSelection(false);
-					currAddressRadioBtn7.setSelection(false);
-					currAddressRadioBtn6.setSelection(false);
-					currAddressRadioBtn8.setSelection(false);
-					currAddressRadioBtn9.setSelection(false);
-					currAddressRadioBtn10.setSelection(false);
-					currAddressRadioBtn11.setSelection(false);
-					currAddressRadioBtn12.setSelection(false);
-
-					currInstrRadioBtn1.setSelection(false);
-					currInstrRadioBtn2.setSelection(false);
-					currInstrRadioBtn3.setSelection(false);
-					currInstrRadioBtn4.setSelection(false);
-					currInstrRadioBtn5.setSelection(false);
-					currInstrRadioBtn6.setSelection(false);
-					currInstrRadioBtn7.setSelection(false);
-					currInstrRadioBtn8.setSelection(false);
-					currInstrRadioBtn9.setSelection(false);
-					currInstrRadioBtn10.setSelection(false);
-					currInstrRadioBtn11.setSelection(false);
-					currInstrRadioBtn12.setSelection(false);
-					currInstrRadioBtn13.setSelection(false);
-					currInstrRadioBtn14.setSelection(false);
-					currInstrRadioBtn15.setSelection(false);
-					currInstrRadioBtn16.setSelection(false);
-
-					memDataRadioBtn1.setSelection(false);
-					memDataRadioBtn2.setSelection(false);
-					memDataRadioBtn3.setSelection(false);
-					memDataRadioBtn4.setSelection(false);
-					memDataRadioBtn5.setSelection(false);
-					memDataRadioBtn6.setSelection(false);
-					memDataRadioBtn7.setSelection(false);
-					memDataRadioBtn8.setSelection(false);
-					memDataRadioBtn9.setSelection(false);
-					memDataRadioBtn10.setSelection(false);
-					memDataRadioBtn11.setSelection(false);
-					memDataRadioBtn12.setSelection(false);
-					memDataRadioBtn13.setSelection(false);
-					memDataRadioBtn14.setSelection(false);
-					memDataRadioBtn15.setSelection(false);
-					memDataRadioBtn16.setSelection(false);
-					ldrChkBox.setSelection(false);
-					ldaChkBox.setSelection(false);
-					ldxChkBox.setSelection(false);
-					strChkBox.setSelection(false);
-					stxChkBox.setSelection(false);
-					singleStepBtn.setSelection(false);
-					standardBtn.setSelection(false);
-					r0ChkBox.setSelection(false);
-					r1ChkBox.setSelection(false);
-					r2ChkBox.setSelection(false);
-					r3ChkBox.setSelection(false);
-
-					x1ChkBox.setSelection(false);
-					x2ChkBox.setSelection(false);
-					x3ChkBox.setSelection(false);
-
-					ccRadioBtn1.setSelection(false);
-					ccRadioBtn2.setSelection(false);
-					ccRadioBtn3.setSelection(false);
-					ccRadioBtn4.setSelection(false);
-
-					raRadioBtn1.setSelection(false);
-					raRadioBtn2.setSelection(false);
-					raRadioBtn3.setSelection(false);
-					raRadioBtn4.setSelection(false);
-					raRadioBtn5.setSelection(false);
-					raRadioBtn6.setSelection(false);
-					raRadioBtn7.setSelection(false);
-					raRadioBtn8.setSelection(false);
-					raRadioBtn9.setSelection(false);
-					raRadioBtn10.setSelection(false);
-					raRadioBtn11.setSelection(false);
-					raRadioBtn12.setSelection(false);
-
-					msrRadioBtn1.setSelection(false);
-					msrRadioBtn2.setSelection(false);
-					msrRadioBtn3.setSelection(false);
-					msrRadioBtn4.setSelection(false);
-					msrRadioBtn5.setSelection(false);
-					msrRadioBtn6.setSelection(false);
-					msrRadioBtn7.setSelection(false);
-					msrRadioBtn8.setSelection(false);
-					msrRadioBtn9.setSelection(false);
-					msrRadioBtn10.setSelection(false);
-					msrRadioBtn11.setSelection(false);
-					msrRadioBtn12.setSelection(false);
-					msrRadioBtn13.setSelection(false);
-					msrRadioBtn14.setSelection(false);
-					msrRadioBtn15.setSelection(false);
-					msrRadioBtn16.setSelection(false);
-				}
+//
+                }
 			}
 
 		};
@@ -2234,131 +2016,129 @@ public class GUI{
 		singleStepBtn.addListener(SWT.Selection,listener);
 		standardBtn.addListener(SWT.Selection,listener);
 		haltBtn.addListener(SWT.Selection,listener);
-		clearBtn.addListener(SWT.Selection,listener);
-
 
 	}
 
 	// Method that color the different radio buttons and their binary representation for Registers of 4 bits
-	public void setRadioBtn4(String binary, Button b1, Button b2, Button b3, Button b4){
-		if(binary.substring(0,1).equals("1")) b1.setSelection(true);
-		else b1.setSelection(false);
-		if(binary.substring(1,2).equals("1")) b2.setSelection(true);
-		else b2.setSelection(false);
-		if(binary.substring(2,3).equals("1")) b3.setSelection(true);
-		else b3.setSelection(false);
-		if(binary.substring(3,4).equals("1")) b4.setSelection(true);
-		else b1.setSelection(false);
-
-		//		checkEnable(b1);
-		//		checkEnable(b2);
-		//		checkEnable(b3);
-		//		checkEnable(b4);
-	}
+//	public void setRadioBtn4(String binary, Button b1, Button b2, Button b3, Button b4){
+//		if(binary.substring(0,1).equals("1")) b1.setSelection(true);
+//		else b1.setSelection(false);
+//		if(binary.substring(1,2).equals("1")) b2.setSelection(true);
+//		else b2.setSelection(false);
+//		if(binary.substring(2,3).equals("1")) b3.setSelection(true);
+//		else b3.setSelection(false);
+//		if(binary.substring(3,4).equals("1")) b4.setSelection(true);
+//		else b1.setSelection(false);
+//
+//		//	checkEnable(b1);
+//		//	checkEnable(b2);
+//		//	checkEnable(b3);
+//		//	checkEnable(b4);
+//	}
 
 	// Method that color the different radio buttons and their binary representation for Registers of 12 bits
-	public void setRadioBtn12(String binary, Button b1, Button b2, Button b3, Button b4,
-			Button b5, Button b6, Button b7, Button b8, Button b9, Button b10,
-			Button b11, Button b12){
-
-
-		if(binary.substring(0,1).equals("1")) b1.setSelection(true);
-		else b1.setSelection(false);
-		if(binary.substring(1,2).equals("1")) b2.setSelection(true);
-		else b2.setSelection(false);
-		if(binary.substring(2,3).equals("1")) b3.setSelection(true);
-		else b3.setSelection(false);
-		if(binary.substring(3,4).equals("1")) b4.setSelection(true);
-		else b1.setSelection(false);
-		if(binary.substring(4,5).equals("1")) b5.setSelection(true);
-		else b5.setSelection(false);
-		if(binary.substring(5,6).equals("1")) b6.setSelection(true);
-		else b6.setSelection(false);
-		if(binary.substring(6,7).equals("1")) b7.setSelection(true);
-		else b7.setSelection(false);
-		if(binary.substring(7,8).equals("1")) b8.setSelection(true);
-		else b8.setSelection(false);
-		if(binary.substring(8,9).equals("1")) b9.setSelection(true);
-		else b9.setSelection(false);
-		if(binary.substring(9,10).equals("1")) b10.setSelection(true);
-		else b10.setSelection(false);
-		if(binary.substring(10,11).equals("1")) b11.setSelection(true);
-		else b11.setSelection(false);
-		if(binary.substring(11,12).equals("1")) b12.setSelection(true);
-		else b12.setSelection(false);
-
-		//		checkEnable(b1);
-		//		checkEnable(b2);
-		//		checkEnable(b3);
-		//		checkEnable(b4);
-		//		checkEnable(b5);
-		//		checkEnable(b6);
-		//		checkEnable(b7);
-		//		checkEnable(b8);
-		//		checkEnable(b9);
-		//		checkEnable(b10);
-		//		checkEnable(b11);
-		//		checkEnable(b12);
-
-	}
+//	public void setRadioBtn12(String binary, Button b1, Button b2, Button b3, Button b4,
+//							  Button b5, Button b6, Button b7, Button b8, Button b9, Button b10,
+//							  Button b11, Button b12){
+//
+//
+//		if(binary.substring(0,1).equals("1")) b1.setSelection(true);
+//		else b1.setSelection(false);
+//		if(binary.substring(1,2).equals("1")) b2.setSelection(true);
+//		else b2.setSelection(false);
+//		if(binary.substring(2,3).equals("1")) b3.setSelection(true);
+//		else b3.setSelection(false);
+//		if(binary.substring(3,4).equals("1")) b4.setSelection(true);
+//		else b1.setSelection(false);
+//		if(binary.substring(4,5).equals("1")) b5.setSelection(true);
+//		else b5.setSelection(false);
+//		if(binary.substring(5,6).equals("1")) b6.setSelection(true);
+//		else b6.setSelection(false);
+//		if(binary.substring(6,7).equals("1")) b7.setSelection(true);
+//		else b7.setSelection(false);
+//		if(binary.substring(7,8).equals("1")) b8.setSelection(true);
+//		else b8.setSelection(false);
+//		if(binary.substring(8,9).equals("1")) b9.setSelection(true);
+//		else b9.setSelection(false);
+//		if(binary.substring(9,10).equals("1")) b10.setSelection(true);
+//		else b10.setSelection(false);
+//		if(binary.substring(10,11).equals("1")) b11.setSelection(true);
+//		else b11.setSelection(false);
+//		if(binary.substring(11,12).equals("1")) b12.setSelection(true);
+//		else b12.setSelection(false);
+//
+//		//	checkEnable(b1);
+//		//	checkEnable(b2);
+//		//	checkEnable(b3);
+//		//	checkEnable(b4);
+//		//	checkEnable(b5);
+//		//	checkEnable(b6);
+//		//	checkEnable(b7);
+//		//	checkEnable(b8);
+//		//	checkEnable(b9);
+//		//	checkEnable(b10);
+//		//	checkEnable(b11);
+//		//	checkEnable(b12);
+//
+//	}
 
 	// Method that color the different radio buttons and their binary representation for Registers of 16 bits
-	public void setRadioBtn16(String binary, Button b1, Button b2, Button b3, Button b4,
-			Button b5, Button b6, Button b7, Button b8, Button b9, Button b10,
-			Button b11, Button b12, Button b13, Button b14, Button b15, Button b16){
+	public void setRadioBtn(String binary, List<Button> buttonList){
 
 		System.out.println("In radio button method, binary value:" + binary);
 
+        for (int i = 0; i < buttonList.size(); i++) {
+            if(binary.substring(i,i+1).equals("1")) buttonList.get(i).setSelection(true);
+            else buttonList.get(i).setSelection(false);
+        }
 
-		if(binary.substring(0,1).equals("1")) b1.setSelection(true);
-		else b1.setSelection(false);
-		if(binary.substring(1,2).equals("1")) b2.setSelection(true);
-		else b2.setSelection(false);
-		if(binary.substring(2,3).equals("1")) b3.setSelection(true);
-		else b3.setSelection(false);
-		if(binary.substring(3,4).equals("1")) b4.setSelection(true);
-		else b1.setSelection(false);
-		if(binary.substring(4,5).equals("1")) b5.setSelection(true);
-		else b5.setSelection(false);
-		if(binary.substring(5,6).equals("1")) b6.setSelection(true);
-		else b6.setSelection(false);
-		if(binary.substring(6,7).equals("1")) b7.setSelection(true);
-		else b7.setSelection(false);
-		if(binary.substring(7,8).equals("1")) b8.setSelection(true);
-		else b8.setSelection(false);
-		if(binary.substring(8,9).equals("1")) b9.setSelection(true);
-		else b9.setSelection(false);
-		if(binary.substring(9,10).equals("1")) b10.setSelection(true);
-		else b10.setSelection(false);
-		if(binary.substring(10,11).equals("1")) b11.setSelection(true);
-		else b11.setSelection(false);
-		if(binary.substring(11,12).equals("1")) b12.setSelection(true);
-		else b12.setSelection(false);
-		if(binary.substring(12,13).equals("1")) b13.setSelection(true);
-		else b13.setSelection(false);
-		if(binary.substring(13,14).equals("1")) b14.setSelection(true);
-		else b14.setSelection(false);
-		if(binary.substring(14,15).equals("1")) b15.setSelection(true);
-		else b15.setSelection(false);
-		if(binary.substring(15,16).equals("1")) b16.setSelection(true);
-		else b16.setSelection(false);
+//		if(binary.substring(1,2).equals("1")) b2.setSelection(true);
+//		else b2.setSelection(false);
+//		if(binary.substring(2,3).equals("1")) b3.setSelection(true);
+//		else b3.setSelection(false);
+//		if(binary.substring(3,4).equals("1")) b4.setSelection(true);
+//		else b1.setSelection(false);
+//		if(binary.substring(4,5).equals("1")) b5.setSelection(true);
+//		else b5.setSelection(false);
+//		if(binary.substring(5,6).equals("1")) b6.setSelection(true);
+//		else b6.setSelection(false);
+//		if(binary.substring(6,7).equals("1")) b7.setSelection(true);
+//		else b7.setSelection(false);
+//		if(binary.substring(7,8).equals("1")) b8.setSelection(true);
+//		else b8.setSelection(false);
+//		if(binary.substring(8,9).equals("1")) b9.setSelection(true);
+//		else b9.setSelection(false);
+//		if(binary.substring(9,10).equals("1")) b10.setSelection(true);
+//		else b10.setSelection(false);
+//		if(binary.substring(10,11).equals("1")) b11.setSelection(true);
+//		else b11.setSelection(false);
+//		if(binary.substring(11,12).equals("1")) b12.setSelection(true);
+//		else b12.setSelection(false);
+//		if(binary.substring(12,13).equals("1")) b13.setSelection(true);
+//		else b13.setSelection(false);
+//		if(binary.substring(13,14).equals("1")) b14.setSelection(true);
+//		else b14.setSelection(false);
+//		if(binary.substring(14,15).equals("1")) b15.setSelection(true);
+//		else b15.setSelection(false);
+//		if(binary.substring(15,16).equals("1")) b16.setSelection(true);
+//		else b16.setSelection(false);
 
-		//		checkEnable(b1);
-		//		checkEnable(b2);
-		//		checkEnable(b3);
-		//		checkEnable(b4);
-		//		checkEnable(b5);
-		//		checkEnable(b6);
-		//		checkEnable(b7);
-		//		checkEnable(b8);
-		//		checkEnable(b9);
-		//		checkEnable(b10);
-		//		checkEnable(b11);
-		//		checkEnable(b12);
-		//		checkEnable(b13);
-		//		checkEnable(b14);
-		//		checkEnable(b15);
-		//		checkEnable(b16);
+		//	checkEnable(b1);
+		//	checkEnable(b2);
+		//	checkEnable(b3);
+		//	checkEnable(b4);
+		//	checkEnable(b5);
+		//	checkEnable(b6);
+		//	checkEnable(b7);
+		//	checkEnable(b8);
+		//	checkEnable(b9);
+		//	checkEnable(b10);
+		//	checkEnable(b11);
+		//	checkEnable(b12);
+		//	checkEnable(b13);
+		//	checkEnable(b14);
+		//	checkEnable(b15);
+		//	checkEnable(b16);
 	}
 
 	void checkEnable(Button button)
@@ -2367,5 +2147,13 @@ public class GUI{
 		{
 			button.setEnabled(true);
 		}
+	}
+
+	String fetchInstructions(Text txtbox)
+	{
+		String result= "";
+
+		result= txtbox.getText();
+		return result;
 	}
 }
