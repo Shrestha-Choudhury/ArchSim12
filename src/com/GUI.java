@@ -326,6 +326,9 @@ public class GUI{
 	Button x2ChkBox;
 	Button x3ChkBox;
 
+	Text outputTxtBox;
+	Button prog1Btn;
+
     List<Button> xChkArr= new ArrayList<>();
 
 
@@ -339,8 +342,6 @@ public class GUI{
 	int counter = 1;
 	private Group group_6;
 	private Label lblOutput;
-	private Text outputTxtBox;
-	private Button prog1Btn;
 
 
 	/**
