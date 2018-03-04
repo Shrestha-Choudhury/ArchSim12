@@ -325,8 +325,6 @@ public class GUI{
 	Button x1ChkBox;
 	Button x2ChkBox;
 	Button x3ChkBox;
-
-	Text outputTxtBox;
 	Button prog1Btn;
 
     List<Button> xChkArr= new ArrayList<>();
@@ -340,8 +338,6 @@ public class GUI{
     String[] mainNumber = new String[2];
     String[] searchNumber = new String[2];
 	int counter = 1;
-	private Group group_6;
-	private Label lblOutput;
 
 
 	/**
@@ -1283,14 +1279,14 @@ public class GUI{
 												lblOperations.setText("Operations");
 
 		Group group_3 = new Group(shell, SWT.NONE);
-		group_3.setBounds(436, 294, 520, 192);
+		group_3.setBounds(436, 294, 520, 371);
 		
 				Label lblInput = new Label(group_3, SWT.NONE);
 				lblInput.setBounds(23, 22, 43, 15);
-				lblInput.setText("Input");
+				lblInput.setText("Status");
 				
 						statusTxtBox = new Text(group_3, SWT.BORDER);
-						statusTxtBox.setBounds(23, 43, 473, 139);
+						statusTxtBox.setBounds(23, 43, 473, 318);
 
 		Group group_4 = new Group(shell, SWT.NONE);
 		group_4.setBounds(10, 504, 420, 161);
@@ -1920,16 +1916,6 @@ public class GUI{
 		//	lblSimulator.setFont(SWTResourceManager.getFont("Times New Roman", 20, SWT.BOLD | SWT.ITALIC));
 		lblSimulator.setBounds(631, 30, 124, 32);
 		lblSimulator.setText("ArchSim12");
-		
-		group_6 = new Group(shell, SWT.NONE);
-		group_6.setBounds(436, 504, 520, 161);
-		
-		lblOutput = new Label(group_6, SWT.NONE);
-		lblOutput.setText("Output");
-		lblOutput.setBounds(27, 20, 43, 15);
-		
-		outputTxtBox = new Text(group_6, SWT.BORDER);
-		outputTxtBox.setBounds(27, 41, 469, 110);
 
 
 		listener = new Listener() {
