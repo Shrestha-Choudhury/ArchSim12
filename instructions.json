@@ -17,8 +17,8 @@
     "instruction 14": "0001010100100000",
     "instruction 15": "0001100100100000",
     "instruction 16": "0011110100100000",//SIR
-    "instruction 17": "0101000110100001",
-    "instruction 18": "0101010110100001",
+    "instruction 17": "0101000010100001",//MLT
+    "instruction 18": "0101010010100001",//DVD
     "instruction 20": "0101100110100001",
     "instruction 21": "0101110110100001",
     "instruction 22": "0110000110100001",
